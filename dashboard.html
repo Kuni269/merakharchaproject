@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - HisabKitab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+body {
+  background:linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #333;
+}
+
+/* ==== Header ==== */
+header {
+  width: 100%;
+  background: linear-gradient(90deg, #0093E9 0%, #80D0C7 100%);
+  color: #ffffff;
+  padding: 25px 0;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  font-size: 2.3rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+
+.container {
+  margin: 60px auto;
+  width: 85%;
+  text-align: center;
+}
+
+
+.card {
+  background: rgba(255,255,255,0.9);
+  border-radius: 22px;
+  padding: 35px 25px;
+  margin: 20px;
+  display: inline-block;
+  width: 260px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  color: #2575fc;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+/* ==== Links inside Cards ==== */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.logout {
+  margin-top: 50px;
+}
+.logout a {
+  background: linear-gradient(90deg, #ff6a88 0%, #ff99ac 100%);
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+.logout a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+}
+@media (min-width: 768px) {
+    .aboutproject {
+        flex-direction: row; /* Side-by-side cards on tablets and desktops */
+        justify-content: center;
+        gap: 30px;
+    }
+    .card {
+        width: 300px; /* Fixed width on larger screens */
+    }
+    .main-con h2 { font-size: 3em; }
+    .subtext { font-size: 1.2em; }
+    .logo { font-size: 2em; }
+    .header { padding: 15px 50px; }
+}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to HisabKitab</h1>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <a href="addexpense.html">
+        <h2>Add Daily Expenses</h2>
+      </a>
+    </div>
+
+    <div class="card">
+      <a href="monthlysummary.html">
+        <h2>View Monthly Summary</h2>
+      </a>
+    </div>
+
+    <div class="logout">
+      <a href="index.html">Logout</a>
+    </div>
+  </div>
+</body>
+</html>

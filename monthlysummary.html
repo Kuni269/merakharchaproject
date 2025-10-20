@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Monthly Summary</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #333;
+}
+
+header {
+  background: linear-gradient(90deg, #0093E9 0%, #80D0C7 100%);
+  color: #ffffff;
+  padding: 25px 0;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.container {
+  margin: 60px auto;
+  width: 85%;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  background: rgba(255,255,255,0.9);
+  border-radius: 24px;
+  padding: 40px 35px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+  width: 340px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.15);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+label {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #0277bd;
+  font-size: 0.95rem;
+}
+
+input[type="number"] {
+  padding: 12px 14px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  margin-bottom: 22px;
+  font-size: 16px;
+  background: #fdfdfd;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+input[type="number"]:focus {
+  border-color: #0093E9;
+  box-shadow: 0 0 6px rgba(0,147,233,0.4);
+  outline: none;
+}
+
+input[type="submit"] {
+  background: linear-gradient(90deg, #0093E9 0%, #80D0C7 100%);
+  color: #fff;
+  padding: 14px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+input[type="submit"]:hover {
+  transform: scale(1.04);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+}
+
+.back-link {
+  margin-top: 20px;
+  text-align: center;
+}
+.back-link a {
+  text-decoration: none;
+  color: #0093E9;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+.back-link a:hover {
+  color: #0277bd;
+  text-decoration: underline;
+}
+@media (min-width: 768px) {
+    .aboutproject {
+        flex-direction: row; /* Side-by-side cards on tablets and desktops */
+        justify-content: center;
+        gap: 30px;
+    }
+    .card {
+        width: 300px; /* Fixed width on larger screens */
+    }
+    .main-con h2 { font-size: 3em; }
+    .subtext { font-size: 1.2em; }
+    .logo { font-size: 2em; }
+    .header { padding: 15px 50px; }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Monthly Summary</h1>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <form action="MonthlySummaryServlet" method="post">
+                <label for="month">Month (1-12):</label>
+                <input type="number" name="month" min="1" max="12" required>
+
+                <label for="year">Year:</label>
+                <input type="number" name="year" min="2000" max="2100" required>
+
+                <input type="submit" value="Get Summary">
+            </form>
+
+            <div class="back-link">
+                <a href="dashboard.html">Back to Dashboard</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
